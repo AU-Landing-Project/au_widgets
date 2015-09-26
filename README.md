@@ -1,2 +1,6 @@
-# au_widgets
-Provides a range of widgets and enhancements to existing widgets that provide more customization, including blog, bookmarks, files, groups, pages, random content, liked content and tag tracking
+AU-Widgets-Framework-1.8.x
+==========================
+
+AU Widgets for Elgg 1.8
+
+Plugins should reside in mod/au_widgets
