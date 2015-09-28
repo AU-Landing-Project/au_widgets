@@ -4,7 +4,7 @@
     <id>au_widgets</id>
     <author>Matt Beckett (matt@mattbeckett.me)</author>
     <author>Jon Dron (jond@athabascau.ca)</author>
-    <version>2.0</version>
+    <version>2.0.0</version>
     <description>Provides a range of widgets and enhancements 
         to existing widgets that provide more customization, including:
         blog, bookmarks, files, groups, pages, random content, liked content and tag tracking
