@@ -1,4 +1,7 @@
 <?php
+
+namespace AU\Widgets;
+
 $widget = $vars['entity'];
 liked_content_set_defaults($widget);
 
@@ -18,24 +21,23 @@ $options = array(
 );
 
 if ($widget->my_likes !== "0") {
-  $options['checked'] = 'checked';
+	$options['checked'] = 'checked';
 }
 
 if (elgg_instanceof($container, 'user')) {
-  echo elgg_view('input/checkbox', $options);
-  echo elgg_echo('liked_content:widget:your_likes:mine');
-  echo '<br><br>';
+	echo elgg_view('input/checkbox', $options);
+	echo elgg_echo('liked_content:widget:your_likes:mine');
+	echo '<br><br>';
 }
 
 // use sort by controls
 echo elgg_view('eligo/sortby', $vars);
 
 // use owner controls
-if(elgg_instanceof($container, 'group')){
-  echo elgg_view('eligo/groupowners', $vars);
-}
-elseif(elgg_instanceof($container, 'user')){
-  echo elgg_view('eligo/owners', $vars);
+if (elgg_instanceof($container, 'group')) {
+	echo elgg_view('eligo/groupowners', $vars);
+} elseif (elgg_instanceof($container, 'user')) {
+	echo elgg_view('eligo/owners', $vars);
 }
 
 // how many results to show?

@@ -1,15 +1,17 @@
-<?php 
+<?php
+
+namespace AU\Widgets;
 
 // get variables we need
 $widget = $vars["entity"];
 $group = elgg_get_page_owner_entity();
 
-$members = get_group_members($group->guid);
+$members = $group->getMembers();
 
 
 // create a comma delimited list of member guids for sql
 $member_guids = array();
-foreach($members as $member){
+foreach ($members as $member) {
 	$member_guids[] = $member->guid;
 }
 

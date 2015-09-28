@@ -1,5 +1,7 @@
 <?php
 
+namespace AU\Widgets;
+
 echo elgg_echo('tabtext:admin:filter');
 echo "<br>";
 

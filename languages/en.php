@@ -1,6 +1,6 @@
 <?php
 
-$english = array(
+return array(
   'eligo:displayby' => "Display by",
   'eligo:displayby:date' => "Date",
   'eligo:displayby:date:from' => "From",
@@ -42,7 +42,7 @@ $english = array(
   'au_random_content:mintime' => "How far back to look for content?<br>Enter a date YYYY-MM-DD, or a relative amount of time eg. '-6 weeks'",
   'au_random_content:widget:description' => 'Display a random sample of content from throughout the site',
   'tabtext' => "TabText",
-  'tabtext:admin:filter' => "Allow Administrators to submit unfiltered HTML?",
+  'tabtext:admin:filter' => "Allow Administrators to submit unfiltered HTML for tabtext widget?",
   'tabtext:content:label' => "Tab %s Content",
   'tabtext:description' => "Text/HTML widget as configurable tabbed content",
   'tabtext:invalid:parameters' => "Invalid parameters or permissions",
@@ -72,5 +72,3 @@ $english = array(
 	'liked_content:widget:your_likes:description' => "Display content that has been liked",
 	'liked_content:widget:your_likes:mine' => "Show only content you have liked",
 );
-					
-add_translation("en",$english);

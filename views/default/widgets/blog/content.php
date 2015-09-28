@@ -1,26 +1,29 @@
 <?php
 
+namespace AU\Widgets;
+
 $widget = $vars['entity'];
-if(empty($widget->eligo_type) || empty($widget->eligo_subtype)){
-  $ia = elgg_set_ignore_access(true);
-  $widget->eligo_type = 'object';
-  $widget->eligo_subtype = 'blog';
-  
-  // if this is an existing widget from the old 1.7 version
-  // we provide an upgrade path for settings... hopefully  :)
-  // this can be removed to save a few cycles if it's a new installation
-  $widget = eligo_upgrade_old_widget($widget);
-  elgg_set_ignore_access($ia);
+if (empty($widget->eligo_type) || empty($widget->eligo_subtype)) {
+	$ia = elgg_set_ignore_access(true);
+	$widget->eligo_type = 'object';
+	$widget->eligo_subtype = 'blog';
+
+	// if this is an existing widget from the old 1.7 version
+	// we provide an upgrade path for settings... hopefully  :)
+	// this can be removed to save a few cycles if it's a new installation
+	$widget = eligo_upgrade_old_widget($widget);
+	elgg_set_ignore_access($ia);
 }
 
 // add in a create content link in certain contexts
 $owner = elgg_get_page_owner_entity();
-if(elgg_get_logged_in_user_guid() == $owner->guid || (elgg_instanceof($owner, 'group') && $owner->isMember())){
-	//check for group_ux 1.2 setting to disable blog posting
-	// only provide add button if it is not enabled
-	if (group_ux_lock_blog_enable != 'yes'){
+if (elgg_get_logged_in_user_guid() == $owner->guid || (elgg_instanceof($owner, 'group') && $owner->isMember())) {
+
+	if (($owner instanceof \ElggGroup) && $owner->blog_enable != 'yes') {
+		// dont show a link
+	} else {
 		$url = 'blog/add/' . $owner->guid;
-	
+
 		echo '<div class="au_widgets_add_content">';
 		echo elgg_view('output/url', array(
 			'href' => $url,
@@ -39,11 +42,11 @@ $content = elgg_list_entities($options);
 echo $content;
 
 if ($content) {
-  $blog_url = "blog/owner/" . elgg_get_page_owner_entity()->username;
-  if (elgg_instanceof(elgg_get_page_owner_entity(), 'group')) {
-    $blog_url = "blog/group/" . elgg_get_page_owner_entity()->guid . "/all";
-  }
-	
+	$blog_url = "blog/owner/" . elgg_get_page_owner_entity()->username;
+	if (elgg_instanceof(elgg_get_page_owner_entity(), 'group')) {
+		$blog_url = "blog/group/" . elgg_get_page_owner_entity()->guid . "/all";
+	}
+
 	$more_link = elgg_view('output/url', array(
 		'href' => $blog_url,
 		'text' => elgg_echo('blog:moreblogs'),

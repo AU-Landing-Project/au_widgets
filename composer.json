@@ -1,0 +1,21 @@
+{
+    "name": "au/au_widgets",
+    "type": "elgg-plugin",
+    "description": "Provides a range of widgets and enhancements to existing widgets that provide more customization, including blog, bookmarks, files, groups, pages, random content, liked content and tag tracking",
+    "homepage": "https://github.com/AU-Landing-Project/au_widgets",
+    "keywords": ["elgg", "plugin", "widgets", "au_widgets", "AU"],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Matt Beckett",
+            "name": "Jon Dron"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/AU-Landing-Project/au_widgets/issues"
+    },
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": ">=1.0.8"
+    }
+}

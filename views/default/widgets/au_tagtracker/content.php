@@ -1,5 +1,7 @@
 <?php
 
+namespace AU\Widgets;
+
 $widget = $vars['entity'];
 
 // for compatibility with old tagtracker

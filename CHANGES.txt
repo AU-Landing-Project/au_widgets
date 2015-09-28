@@ -2,6 +2,9 @@
 
 x.x:
 
+2.0 ():
+ - upgrade for elgg 1.9+
+
 1.4 (03/22/2013):
  - fixes bug in group content ownership setting
 
